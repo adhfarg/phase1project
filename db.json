@@ -1,0 +1,40 @@
+{
+  "pasta": [
+    {
+      "id": 1,
+      "name": "Spaghetti All Vongole",
+      "image": "./assets/pasta/f3ad6a6d-3cdf-49f6-b4e0-1b853d3f7594.jpeg",
+      "rating": 9.5,
+      "comment": "Amazing, the muscles were the perfect touch!"
+    },
+    {
+      "id": 2,
+      "name": "Pappardelle Ai Funghi",
+      "image": "./assets/pasta/58f9ec17-dba6-4f81-8f2b-fe96a3e20bc4.jpeg",
+      "rating": 8.5,
+      "comment": "Mushrooms and egg yolk was exactly what this dish needed!"
+    },
+    {
+      "id": 3,
+      "name": "Tagliolini Al Rags Bianco",
+      "image": "./assets/pasta/15c592a9-8ed6-42fa-99bc-0a3c9ffdc4c9.jpeg",
+      "rating": "7",
+      "comment": "The zucchini was not me fav!"
+    },
+    {
+      "id": 4,
+      "name": "Mezzi Rigatoni Al Ragu",
+      "image": "./assets/pasta/0dffc4cd-5680-4da1-ac50-afab3d17ec92.jpg",
+      "rating": 10,
+      "comment": "Huge fan of bolognese, was my favorite dish!"
+    },
+    {
+      "id": 5,
+      "name": "Tonnarelli Cacio e Pepe",
+      "image": "./assets/pasta/63404111-bcf7-427d-a7ac-7e584ce01cba.jpg",
+      "rating": 9,
+      "comment": "The cheese fondue sauce with black pepper was perfect!"
+    }
+    
+  ]
+}

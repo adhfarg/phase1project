@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Pasta Rater</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer type="text/javascript" src="./src/index.js"></script>
+</head>
+
+<body>
+  <header>
+    <h3>Pasta Rater</h3>
+  </header>
+
+ 
+  <div id="pasta-menu">
+   
+  </div>
+
+ 
+  <div id="pasta-detail">
+    <img class="detail-image" src="./assets/pasta/f3ad6a6d-3cdf-49f6-b4e0-1b853d3f7594.jpeg" alt="Spaghetti All Vongole" />
+    <h2 class="name">Spaghetti All Vongole</h2>
+   
+  </div>
+
+  <h3>Rating:</h3>
+  <p>
+    <span id='rating-display'>9.5</span> / 10
+  </p>
+  <h3>Comment:</h3>
+  <p id='comment-display'>
+    Amazing, the muscles were the perfect touch!
+  </p>
+
+ 
+  <form id="new-pasta">
+    <h4>Add New Pasta</h4>
+    <label for="new-name">Name: </label>
+    <input type="text" name="name" id="new-name" />
+  
+    <label for="new-image">Image: </label>
+    <input type="text" name="image" id="new-image" />
+  
+    <label for="new-rating">Rating: </label>
+    <input type="number" name="rating" id="new-rating" />
+  
+    <label for="new-comment">Comment: </label>
+    <textarea name="new-comment" id="new-comment"></textarea>
+  
+    <input type="submit" value="Create" />
+  </form>
+
+  <script>
+    
+    const pastaData = [
+      {
+        "id": 1,
+        "name": "Spaghetti All Vongole",
+        "image": "./assets/pasta/f3ad6a6d-3cdf-49f6-b4e0-1b853d3f7594.jpeg",
+        "rating": 9.5,
+        "comment": "Amazing, the muscles were the perfect touch!"
+      },
+      {
+        "id": 2,
+        "name": "Pappardelle Ai Funghi",
+        "image": "./assets/pasta/58f9ec17-dba6-4f81-8f2b-fe96a3e20bc4.jpeg",
+        "rating": 8.5,
+        "comment": "Mushrooms and egg yolk was exactly what this dish needed!"
+      },
+      {
+      "id": 3,
+      "name": "Tagliolini Al Rags Bianco",
+      "image": "./assets/pasta/15c592a9-8ed6-42fa-99bc-0a3c9ffdc4c9.jpeg",
+      "rating": "7",
+      "comment": "The zucchini was not me fav!"
+    },
+    {
+      "id": 4,
+      "name": "Mezzi Rigatoni Al Ragu",
+      "image": "./assets/pasta/0dffc4cd-5680-4da1-ac50-afab3d17ec92.jpg",
+      "rating": 10,
+      "comment": "Huge fan of bolognese, was my favorite dish!"
+    },
+    {
+      "id": 5,
+      "name": "Tonnarelli Cacio e Pepe",
+      "image": "./assets/pasta/63404111-bcf7-427d-a7ac-7e584ce01cba.jpg",
+      "rating": 9,
+      "comment": "The cheese fondue sauce with black pepper was perfect!"
+    }
+    ];
+
+    const pastaMenu = document.getElementById('pasta-menu');
+
+    
+    function updatePastaMenu() {
+      pastaMenu.innerHTML = '';
+      pastaData.forEach(pasta => {
+        const pastaItem = document.createElement('div');
+        pastaItem.classList.add('pasta-item');
+        pastaItem.innerHTML = `<img src="${pasta.image}" alt="${pasta.name}" />`;
+        pastaItem.addEventListener('click', () => showPastaDetails(pasta));
+        pastaMenu.appendChild(pastaItem);
+      });
+    }
+
+    
+    function showPastaDetails(pasta) {
+      const pastaDetailImage = document.querySelector('#pasta-detail .detail-image');
+      const pastaName = document.querySelector('#pasta-detail .name');
+      const pastaRating = document.querySelector('#rating-display');
+      const pastaComment = document.querySelector('#comment-display');
+
+      pastaDetailImage.src = pasta.image;
+      pastaDetailImage.alt = pasta.name;
+      pastaName.textContent = pasta.name;
+      pastaRating.textContent = pasta.rating;
+      pastaComment.textContent = pasta.comment;
+    }
+
+    
+    updatePastaMenu();
+  </script>
+</body>
+
+</html>
